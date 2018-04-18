@@ -1,0 +1,87 @@
+Finnish and Kazakh: `apertium-fin-kaz`
+===============================================================================
+
+This is an Apertium language pair for translating between Finnish and
+Kazakh. What you can use this language package for:
+
+* Translating between Finnish and Kazakh
+* Morphological analysis of Finnish and Kazakh
+* Part-of-speech tagging of Finnish and Kazakh
+
+For information on the latter two points, see subheading "For more
+information" below.
+
+Requirements
+-------------------------------------------------------------------------------
+
+You will need the following software installed:
+
+* lttoolbox (>= 3.3.0)
+* apertium (>= 3.3.0)
+* vislcg3 (>= 0.9.9.10297)
+* hfst (>= 3.8.2)
+* apertium-fin
+* apertium-kaz
+
+If this does not make any sense, we recommend you look at: www.apertium.org.
+
+Compiling
+-------------------------------------------------------------------------------
+
+Given the requirements being installed, you should be able to just run:
+
+    $ ./configure
+    $ make
+    # make install
+
+You can use `./autogen.sh` instead of `./configure` you're compiling from
+source. If you installed any prerequisite language packages using a `--prefix`
+to `./configure`, make sure to give the same `--prefix` to `./configure` here.
+
+Testing
+-------------------------------------------------------------------------------
+
+If you are in the source directory after running make, the following
+commands should work:
+
+    $  echo "TODO test sentence 1" | apertium -d . fin-kaz
+    TODO test translated sentence 1
+
+    $ echo "TODO test sentence 2" | apertium -d . kaz-fin
+    TODO test translated sentence 2
+
+After installing somewhere in `$PATH`, you should be able to do e.g.
+
+    $  echo "TODO test sentence 1" | apertium fin-kaz
+    TODO test translated sentence 1
+
+Files and data
+-------------------------------------------------------------------------------
+
+* `apertium-fin-kaz.fin-kaz.dix`  - Bilingual dictionary
+* `apertium-fin-kaz.fin-kaz.t1x`  - Chunking rules for translating into Kazakh
+* `apertium-fin-kaz.kaz-fin.t1x`  - Chunking rules for translating into Finnish
+* `apertium-fin-kaz.fin-kaz.t2x`  - Interchunk rules for translating into Kazakh
+* `apertium-fin-kaz.kaz-fin.t2x`  - Interchunk rules for translating into Finnish
+* `apertium-fin-kaz.fin-kaz.t3x`  - Postchunk rules for translating into Kazakh
+* `apertium-fin-kaz.kaz-fin.t3x`  - Postchunk rules for translating into Finnish
+* `apertium-fin-kaz.fin-kaz.lrx`  - Lexical selection rules for translating into Kazakh
+* `apertium-fin-kaz.kaz-fin.lrx`  - Lexical selection rules for translating into Finnish
+* `modes.xml`                     - Translation modes
+
+For more information
+-------------------------------------------------------------------------------
+
+* http://wiki.apertium.org/wiki/Installation
+* http://wiki.apertium.org/wiki/apertium-fin-kaz
+* http://wiki.apertium.org/wiki/Using_an_lttoolbox_dictionary
+
+Help and support
+-------------------------------------------------------------------------------
+
+If you need help using this language pair or data, you can contact:
+
+* Mailing list: apertium-stuff@lists.sourceforge.net
+* IRC: `#apertium` on `irc.freenode.net`
+
+See also the file AUTHORS included in this distribution.

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- fin → kaz -->
+
+  <mode name="fin-kaz" install="yes" gendebug="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fin-kaz.automorf.bin"/>
+      </program>
+
+      <program name="cg-proc -w -1 -n">
+        <file name="fin-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-kaz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="fin-kaz.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-kaz.fin-kaz.t1x"/>
+        <file name="fin-kaz.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-kaz.fin-kaz.t2x"/>
+        <file name="fin-kaz.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-kaz.fin-kaz.t3x"/>
+        <file name="fin-kaz.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="fin-kaz.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="fin-kaz.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- kaz → fin -->
+
+  <mode name="kaz-fin" install="yes" gendebug="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-fin.automorf.bin"/>
+      </program>
+
+      <program name="cg-proc -w -1 -n">
+        <file name="kaz-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-fin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="kaz-fin.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-kaz.kaz-fin.t1x"/>
+        <file name="kaz-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-kaz.kaz-fin.t2x"/>
+        <file name="kaz-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-kaz.kaz-fin.t3x"/>
+        <file name="kaz-fin.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="kaz-fin.autogen.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+</modes>
+
