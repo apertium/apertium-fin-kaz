@@ -24,6 +24,7 @@
 	<section-def-attrs>
 		<def-attr n="a_cas">
 			<attr-item tags="nom"/>
+			<attr-item tags="ine"/>
 		</def-attr>
 		<def-attr n="a_voice">
 			<attr-item tags="actv"/>
@@ -124,6 +125,22 @@
 				</otherwise>
 			</choose>
 		</def-macro>
+		<def-macro n="noun-case" npar="1">
+			<choose>
+				<when>
+					<test>
+						<equal>
+							<clip pos="1" side="tl" part="a_cas"/>
+							<lit-tag v="ine"/>
+						</equal>
+					</test>
+					<let>
+						<clip pos="1" side="tl" part="a_cas"/>
+						<lit-tag v="loc"/>
+					</let>
+				</when>
+			</choose>
+		</def-macro>
 	</section-def-macros>
 
 	<section-rules>
@@ -150,6 +167,9 @@
 				<pattern-item n="nom"/>
 			</pattern>
 			<action>
+				<call-macro n="noun-case">
+					<with-param pos="1"/>
+				</call-macro>
 				<out>
 					<chunk name="noun" case="caseFirstWord">
 						<tags>
