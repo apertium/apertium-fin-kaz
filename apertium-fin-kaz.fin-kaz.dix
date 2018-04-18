@@ -39,6 +39,8 @@
     <sdef n="p1"              c="1st person"/>
     <sdef n="p2"              c="2nd person"/>
     <sdef n="p3"              c="3rd person"/>
+    
+	 <sdef n="frm"             c="formal"/>
 
     <sdef n="nt"              c="Neuter"/>
     <sdef n="ut"              c="Utrum"/>
@@ -121,6 +123,8 @@
 
 		<!-- PRN -->
 		<e><p><l>minä<s n="prn"/><s n="sg"/></l><r>мен<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/></r></p></e>
+		<e r="RL"><p><l>sinä<s n="prn"/><s n="sg"/></l><r>сен<s n="prn"/><s n="pers"/><s n="p2"/><s n="sg"/></r></p></e>
+		<e><p><l>sinä<s n="prn"/><s n="sg"/></l><r>сіз<s n="prn"/><s n="pers"/><s n="p2"/><s n="sg"/><s n="frm"/></r></p></e>
 
 		<!-- NP.ANT -->
 		<e><p><l>Jaako<s n="np"/><s n="ant"/><s n="m"/></l><r>Яако<s n="np"/><s n="ant"/><s n="m"/></r></p></e>
