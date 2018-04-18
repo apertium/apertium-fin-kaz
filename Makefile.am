@@ -68,8 +68,10 @@ $(PREFIX1).automorf.bin: .deps/$(LANG1).automorf.hfst .deps/$(PREFIX1).autobil.p
 $(PREFIX2).autogen.hfst: $(AP_SRC1)/$(LANG1).autogen.hfst
 	cp $< $@
 
-$(PREFIX2).autogen.bin: $(AP_SRC1)/$(LANG1).autogen.bin
-	cp $< $@
+$(PREFIX2).autogen.bin: $(AP_SRC1)/$(LANG1).autogen.att.gz
+	zcat < $< > .deps/$(LANG1).autogen.att
+	lt-comp lr .deps/$(LANG1).autogen.att $@
+
 
 # -------------------
 # Kazakh analysis:

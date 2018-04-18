@@ -1,60 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transfer default="chunk">
-  <section-def-cats>
-    <def-cat n="nom">
-      <cat-item tags="n.*"/>
-    </def-cat>
-    <def-cat n="sent">
-      <cat-item tags="sent"/>
-    </def-cat>
-  </section-def-cats>
+	<section-def-cats>
+		<def-cat n="nom">
+			<cat-item tags="n.*"/>
+		</def-cat>
+		<def-cat n="verb">
+			<cat-item tags="vblex.*"/>
+			<cat-item tags="cop.*"/>
+		</def-cat>
+		<def-cat n="adj">
+			<cat-item tags="adj.*"/>
+		</def-cat>
+		<def-cat n="adv">
+			<cat-item tags="adv"/>
+			<cat-item tags="adv.*"/>
+		</def-cat>
 
-  <section-def-attrs>
-    <def-attr n="a_cas">
-      <attr-item tags="nom"/>
-    </def-attr>
-  </section-def-attrs>
+		<def-cat n="sent">
+			<cat-item tags="sent"/>
+		</def-cat>
+	</section-def-cats>
 
-  <section-def-vars>
-    <def-var n="number"/>
-  </section-def-vars>
+	<section-def-attrs>
+		<def-attr n="a_cas">
+			<attr-item tags="nom"/>
+		</def-attr>
+		<def-attr n="a_voice">
+			<attr-item tags="actv"/>
+			<attr-item tags="pass"/>
+		</def-attr>
+		<def-attr n="a_tense">
+			<attr-item tags="pri"/>
+		</def-attr>
+		<def-attr n="a_num">
+			<attr-item tags="sg"/>
+			<attr-item tags="pl"/>
+		</def-attr>
+		<def-attr n="a_pos">
+			<attr-item tags="n"/>
+			<attr-item tags="vblex"/>
+			<attr-item tags="cop"/>
+			<attr-item tags="adj"/>
+			<attr-item tags="adv"/>
+			<attr-item tags="cnjcoo"/>
+		</def-attr>
+	</section-def-attrs>
 
-  <section-def-macros>
-    <def-macro n="test" npar="1">
-          <let>
-            <var n="number"/>
-            <lit v=""/>
-          </let>
-    </def-macro>
-  </section-def-macros>
+	<section-def-vars>
+		<def-var n="number"/>
+		<def-var n="S_pos"/>
+	</section-def-vars>
 
-  <section-rules>
-    <rule comment="REGLA: SENT">
-      <pattern>
-        <pattern-item n="sent"/>
-      </pattern>
-      <action>
-        <out>
-          <chunk name="sent" case="caseFirstWord">
-            <tags>
-              <tag><lit-tag v="SENT"/></tag>
-            </tags>
-            <lu>
-              <clip pos="1" side="tl" part="whole"/>
-            </lu>
-          </chunk>
-        </out>
-      </action>
-    </rule>
-  </section-rules>
+	<section-def-macros>
+		<def-macro n="test" npar="1">
+			<let>
+				<var n="number"/>
+				<lit v=""/>
+			</let>
+		</def-macro>
+		<def-macro n="verb-voice" npar="1">
+			<choose>
+				<when>
+					<test>
+						<equal>
+							<clip pos="1" side="tl" part="a_voice"/>
+							<lit-tag v="actv"/>
+						</equal>
+					</test>
+					<let>
+						<clip pos="1" side="tl" part="a_voice"/>
+						<lit v=""/>
+					</let>
+				</when>
+			</choose>
+		</def-macro>
+		<def-macro n="verb-tense" npar="1">
+			<choose>
+				<when>
+					<test>
+						<equal>
+							<clip pos="1" side="tl" part="a_tense"/>
+							<lit-tag v="pri"/>
+						</equal>
+					</test>
+					<let>
+						<clip pos="1" side="tl" part="a_tense"/>
+						<lit-tag v="aor"/>
+					</let>
+				</when>
+			</choose>
+		</def-macro>
+		<def-macro n="adj-num" npar="1">
+			<let>
+				<clip pos="1" side="tl" part="a_num"/>
+				<lit v=""/>
+			</let>
+		</def-macro>
+		<def-macro n="adj-case" npar="1">
+			<let>
+				<clip pos="1" side="tl" part="a_cas"/>
+				<lit v=""/>
+			</let>
+		</def-macro>
+		<def-macro n="identify-copula" npar="1">
+			<choose>
+				<when>
+					<test>
+						<equal>
+							<clip pos="1" side="tl" part="a_pos"/>
+							<lit-tag v="cop"/>
+						</equal>
+					</test>
+					<let>
+						<var n="S_pos" />
+						<lit-tag v="SCop"/>
+					</let>
+				</when>
+				<otherwise>
+					<let>
+						<var n="S_pos" />
+						<lit-tag v="SV"/>
+					</let>
+				</otherwise>
+			</choose>
+		</def-macro>
+	</section-def-macros>
+
+	<section-rules>
+		<rule comment="REGLA: SENT">
+			<pattern>
+				<pattern-item n="sent"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="sent" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="SENT"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+			</action>
+		</rule>
+
+		<rule comment="REGLA: NOM">
+			<pattern>
+				<pattern-item n="nom"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="noun" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="SN"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+			</action>
+		</rule>
+
+		<rule comment="REGLA: ADV">
+			<pattern>
+				<pattern-item n="adv"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="adv" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="SAdv"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+			</action>
+		</rule>
+		<rule comment="REGLA: VERB">
+			<pattern>
+				<pattern-item n="verb"/>
+			</pattern>
+			<action>
+				<call-macro n="verb-tense">
+					<with-param pos="1"/>
+				</call-macro>
+				<call-macro n="verb-voice">
+					<with-param pos="1"/>
+				</call-macro>
+				<call-macro n="identify-copula">
+					<with-param pos="1"/>
+				</call-macro>
+				<out>
+					<chunk name="verb" case="caseFirstWord">
+						<tags>
+							<tag><var n="S_pos"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+			</action>
+		</rule>
+
+		<rule comment="REGLA: ADJ">
+			<pattern>
+				<pattern-item n="adj"/>
+			</pattern>
+			<action>
+				<call-macro n="adj-num">
+					<with-param pos="1"/>
+				</call-macro>
+				<call-macro n="adj-case">
+					<with-param pos="1"/>
+				</call-macro>
+				<out>
+					<chunk name="adj" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="SA"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+			</action>
+		</rule>
+	</section-rules>
 </transfer>
 
 <!--
 Resources:
-    http://wiki.apertium.org/wiki/Chunking:_A_full_example
-    http://wiki.apertium.org/wiki/Chunking
-    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
-    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
-    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+		http://wiki.apertium.org/wiki/Chunking:_A_full_example
+		http://wiki.apertium.org/wiki/Chunking
+		http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+		http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+		http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
 -->
 

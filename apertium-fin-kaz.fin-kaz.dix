@@ -8,6 +8,7 @@
     <sdef n="n"               c="Noun"/>
     <sdef n="np"              c="Proper noun"/>
     <sdef n="vblex"           c="Verb, lexical"/>
+    <sdef n="cop"             c="Copula"/>
     <sdef n="vbmod"           c="Modal verb"/>
     <sdef n="vaux"            c="Auxiliary verb"/>
     <sdef n="vbser"           c="'To be' verb"/>
@@ -33,7 +34,7 @@
     <sdef n="res"             c="Reciprocal pronoun"/>
 
     <sdef n="det"             c="Determiner"/>
-    <sdef n="pos"             c="Possessive"/>
+    <sdef n="pos"             c="Possessive, Positive?"/>
 
     <sdef n="p1"              c="1st person"/>
     <sdef n="p2"              c="2nd person"/>
@@ -83,6 +84,7 @@
 
     <sdef n="num"             c="Numeral"/>
     <sdef n="sent"            c="Sentence end"/>
+    <sdef n="punct"           c="Punctuation"/>
     <sdef n="cm"              c="Comma"/>
     <sdef n="apos"            c="Apostrophe"/>
     <sdef n="guio"            c="Dash"/>
@@ -95,13 +97,37 @@
     <sdef n="compound-R"      c="May be the right-side of a compound, or a full word"/>
   </sdefs>
 
-   <section id="main" type="standard">
+	<section id="main" type="standard">
       <!-- Define entries within <e> here. -->
-      <e><p><l>house<s n="n"/></l><r>casa<s n="n"/><s n="f"/></r></p></e>
+		
+		<!-- NOUN -->
+		<!-- e><p><l>puutarha<s n="n"/></l><r>бақша<s n="n"/></r></p></e -->
+		<!-- e><p><l>sää<s n="n"/></l><r>әуе<s n="n"/></r></p></e -->
 
-      <e><re>[.\?;:!…¿¶]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
-      <e><re>,</re>          <p><l><s n="cm"/></l>  <r><s n="cm"/></r></p></e>
-   </section>
+
+		<!-- VERB -->
+		<e><p><l>olla<s n="vblex"/></l><r>е<s n="cop"/></r></p></e>
+
+		<!-- ADJ -->
+		<e><p><l>hyvä<s n="adj"/><s n="pos"/></l><r>жақсы<s n="adj"/></r></p></e>
+		<e><p><l>lämmin<s n="adj"/><s n="pos"/></l><r>жылы<s n="adj"/></r></p></e>
+
+		<!-- ADV -->
+		<e><p><l>tänään<s n="adv"/></l><r>бүгін<s n="adv"/></r></p></e>
+		<e><p><l>erittäin<s n="adv"/></l><r>өте<s n="adv"/></r></p></e>
+
+
+		<!-- CONJ -->
+		<e><p><l>ja<s n="cnjcoo"/></l><r>және<s n="cnjcoo"/></r></p></e>
+
+
+		<!-- NP.ANT -->
+		<e><p><l>Jaako<s n="np"/><s n="ant"/><s n="m"/></l><r>Яако<s n="np"/><s n="ant"/><s n="m"/></r></p></e>
+		<e><p><l>Mari<s n="np"/><s n="ant"/><s n="f"/></l><r>Мария<s n="np"/><s n="ant"/><s n="f"/></r></p></e>
+
+		<e><re>[.\?;:!…¿¶]</re><p><l><s n="punct"/></l><r><s n="sent"/></r></p></e>
+		<e><re>,</re>          <p><l><s n="punct"/></l>  <r><s n="cm"/></r></p></e>
+	</section>
 </dictionary>
 
 <!--
