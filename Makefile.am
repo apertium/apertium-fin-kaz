@@ -51,10 +51,10 @@ TARGETS_COMMON =		\
 .deps/$(LANG1).automorf.hfst: $(AP_SRC1)/$(LANG1).automorf.att.gz .deps/.d
 	$(ZCAT) $< | hfst-txt2fst > $@
 
-.deps/$(LANG1).automorf.bin: $(AP_SRC1)/$(LANG1).automorf.att.gz .deps/.d
-	@$(ZCAT) $< > $@.att
-	lt-comp lr $@.att $@
-	@rm $@.att
+#.deps/$(LANG1).automorf.bin: $(AP_SRC1)/$(LANG1).automorf.att.gz .deps/.d
+#	@$(ZCAT) $< > $@.att
+#	lt-comp lr $@.att $@
+#	@rm $@.att
 
 $(PREFIX1).automorf.bin: .deps/$(LANG1).automorf.hfst .deps/$(PREFIX1).autobil.prefixes
 	hfst-compose-intersect -1 .deps/$(LANG1).automorf.hfst -2 .deps/$(PREFIX1).autobil.prefixes -o .deps/$(PREFIX1).automorf.trimmed
@@ -222,8 +222,9 @@ apertium_fin_kaz_DATA=	\
 
 # All modes are created by the same goal, listing several will just give problems with make -j2
 noinst_DATA=modes/$(PREFIX1).mode \
-	.deps/$(LANG1).automorf.bin \
 	.deps/$(LANG2).automorf.bin
+	
+# .deps/$(LANG1).automorf.bin
 
 install-data-local: install-modes
 
