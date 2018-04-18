@@ -98,7 +98,6 @@
   </sdefs>
 
 	<section id="main" type="standard">
-      <!-- Define entries within <e> here. -->
 		
 		<!-- NOUN -->
 		<!-- e><p><l>puutarha<s n="n"/></l><r>бақша<s n="n"/></r></p></e -->
@@ -127,6 +126,8 @@
 		<e><p><l>Jaako<s n="np"/><s n="ant"/><s n="m"/></l><r>Яако<s n="np"/><s n="ant"/><s n="m"/></r></p></e>
 		<e><p><l>Mari<s n="np"/><s n="ant"/><s n="f"/></l><r>Мария<s n="np"/><s n="ant"/><s n="f"/></r></p></e>
 
+
+		<!-- PUNCT -->
 		<e><re>[.\?;:!…¿¶]</re><p><l><s n="punct"/></l><r><s n="sent"/></r></p></e>
 		<e><re>,</re>          <p><l><s n="punct"/></l>  <r><s n="cm"/></r></p></e>
 	</section>
