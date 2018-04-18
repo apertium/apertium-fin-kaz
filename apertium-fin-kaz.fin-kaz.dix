@@ -120,6 +120,8 @@
 		<!-- CONJ -->
 		<e><p><l>ja<s n="cnjcoo"/></l><r>және<s n="cnjcoo"/></r></p></e>
 
+		<!-- PRN -->
+		<e><p><l>minä<s n="prn"/><s n="sg"/></l><r>мен<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/></r></p></e>
 
 		<!-- NP.ANT -->
 		<e><p><l>Jaako<s n="np"/><s n="ant"/><s n="m"/></l><r>Яако<s n="np"/><s n="ant"/><s n="m"/></r></p></e>
