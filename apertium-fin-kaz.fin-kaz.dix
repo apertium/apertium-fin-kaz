@@ -102,8 +102,8 @@
 	<section id="main" type="standard">
 		
 		<!-- NOUN -->
-		<!-- e><p><l>puutarha<s n="n"/></l><r>бақша<s n="n"/></r></p></e -->
-		<!-- e><p><l>sää<s n="n"/></l><r>әуе<s n="n"/></r></p></e -->
+		<e><p><l>puutarha<s n="n"/></l><r>бақша<s n="n"/></r></p></e>
+		<e><p><l>sää<s n="n"/></l><r>әуе<s n="n"/></r></p></e>
 
 
 		<!-- VERB -->
