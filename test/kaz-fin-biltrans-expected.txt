@@ -1,0 +1,18 @@
+[ASGas4SzSqmy#0] ^*һ/*һ$
+[/ASGas4SzSqmy]
+[QbgF6nrAFOI1#0] ^;<sent>/;<punct>$
+[/QbgF6nrAFOI1]
+[UcmlhK0TudKq#0] ^*ج/*ج$
+[/UcmlhK0TudKq]
+[eGTJBHV8XJzq#0] ^*ەыңұздаңіاشاشى/*ەыңұздаңіاشاشى$
+[/eGTJBHV8XJzq]
+[hsdBYXxVyj6M#0] ^;<sent>/;<punct>$
+[/hsdBYXxVyj6M]
+[jTyUsBs0-NcQ#0] ^*هше/*هше$
+[/jTyUsBs0-NcQ]
+[lVrDogXorDLZ#0] ^*Яعاشى/*Яعاشى$
+[/lVrDogXorDLZ]
+[u3IIvJtdfATx#0] ^!<sent>/!<punct>$
+[/u3IIvJtdfATx]
+[vE1jFSavYhsh#0] ^,<cm>/,<punct>$
+[/vE1jFSavYhsh]

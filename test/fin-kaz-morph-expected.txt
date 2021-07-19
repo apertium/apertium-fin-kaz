@@ -1,0 +1,20 @@
+[09mwXzty_RO5#0] ^5+3€/5+3€<np><sg><nom>$
+[/09mwXzty_RO5]
+[7aXNlvvrwl01#0] ^%-JPG/%<sym><n><cmp>+JPG<n><sg><nom>/%<sym><n><cmp>+jpg<n><sg><nom>$
+[/7aXNlvvrwl01]
+[7s00r-so9tzW#0] ^Úbedammepa/Úbeda<np><top><pl><nom><px1pl>+pa<enc>/Úbeda<np><top><sg><gen><px1pl>+pa<enc>/Úbeda<np><top><sg><nom><px1pl>+pa<enc>$
+[/7s00r-so9tzW]
+[IErGaohW0MxO#0] ^MP/MP<n><sg><nom>$
+[/IErGaohW0MxO]
+[V4U6phz7eudH#0] ^²/²<sym><n>/²<sym><n><sg><nom>$
+[/V4U6phz7eudH]
+[Y0zi8Esgxudk#0] ^µF/µF<n><sg><nom>$
+[/Y0zi8Esgxudk]
+[Z1eIUIWIB6lo#0] ^rauetaanhankaan/raueta<vblex><pasv><pri><impers>+han<enc>+kaan<enc>$
+[/Z1eIUIWIB6lo]
+[o1hPfW5FYBhP#0] ^₤-/₤<sym><compound-only-L>$
+[/o1hPfW5FYBhP]
+[wr4JnHtM24hV#0] ^Ķegumsit/Ķegums<np><top><pl><nom>$
+[/wr4JnHtM24hV]
+[zEVlCRXEqGy-#0] ^Uljasjärvinehen/Uljasjärvi<np><top><com><px3sp><use_archaic>/uljas<n><sg><nom><cmp>+järvi<n><com><px3sp><use_archaic>$
+[/zEVlCRXEqGy-]

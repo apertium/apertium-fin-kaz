@@ -1,0 +1,20 @@
+[09mwXzty_RO5#0] ^default<default>{^@5+3€<np><sg><nom>$}$
+[/09mwXzty_RO5]
+[7aXNlvvrwl01#0] ^default<default>{^@%<sym><n><cmp>$}$ ^noun<SN>{^@JPG<n><sg><nom>$}$
+[/7aXNlvvrwl01]
+[7s00r-so9tzW#0] ^default<default>{^@Úbeda<np><top><pl><nom><px1pl>$}$ ^default<default>{^@pa<enc>$}$
+[/7s00r-so9tzW]
+[IErGaohW0MxO#0] ^noun<SN>{^@MP<n><sg><nom>$}$
+[/IErGaohW0MxO]
+[V4U6phz7eudH#0] ^default<default>{^@²<sym><n>$}$
+[/V4U6phz7eudH]
+[Y0zi8Esgxudk#0] ^noun<SN>{^@µF<n><sg><nom>$}$
+[/Y0zi8Esgxudk]
+[Z1eIUIWIB6lo#0] ^verb<SV>{^@raueta<vblex><pasv><aor><impers>$}$ ^default<default>{^@han<enc>$}$ ^default<default>{^@kaan<enc>$}$
+[/Z1eIUIWIB6lo]
+[o1hPfW5FYBhP#0] ^default<default>{^@₤<sym><compound-only-L>$}$
+[/o1hPfW5FYBhP]
+[wr4JnHtM24hV#0] ^default<default>{^@Ķegums<np><top><pl><nom>$}$
+[/wr4JnHtM24hV]
+[zEVlCRXEqGy-#0] ^default<default>{^@Uljasjärvi<np><top><com><px3sp><use_archaic>$}$
+[/zEVlCRXEqGy-]

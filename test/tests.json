@@ -1,0 +1,10 @@
+{
+    "fin-kaz": {
+        "input": "fin-kaz-input.txt",
+        "mode": "fin-kaz"
+    },
+    "kaz-fin": {
+        "input": "kaz-fin-input.txt",
+        "mode": "kaz-fin"
+    }
+}
